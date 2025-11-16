@@ -16,7 +16,7 @@ class Init:
             shape = (row, col) if col is not None else (row,)
             return np.ones(shape, dtype=dtype)
         except Exception as e:
-            return(f"Error while initializing Ones:{e} \nhelp_msg("ones")")
+            return(f"Error while initializing Ones:{e} \n{help_msg('ones')}")
         
     # Constants
     def constants(self, n, row, col=None, dt=None):
@@ -31,7 +31,7 @@ class Init:
             shape = (row, col,) if col is not None else (row,)
             return np.full(shape,n,dtype=dtype)
         except Exception as e:
-            return(f"Error while initializing Constants of {n}:{e} \nhelp_msg("constants")")
+            return(f"Error while initializing Constants of {n}:{e} \n{help_msg('constants')}")
     
     # Eye Matrix
     def eye_matrix(self, n, m=None, k=0, dt=None):
@@ -45,7 +45,7 @@ class Init:
             return np.eye(N=n, M=m, k=k, dtype=dtype)
     
         except Exception as e:
-            return f"Error while initializing Eye Matrix of shape ({n} x {m}): {e} \nhelp_msg("eye")"
+            return f"Error while initializing Eye Matrix of shape ({n} x {m}): {e} \n{help_msg('eye')}"
 
         
     # Identity Matrix
@@ -77,7 +77,7 @@ class Init:
             else:
                 return np.linspace(start, stop, step)
         except Exception as e:
-            return(f"Error while initializing Linspace array: {e} \nhelp_msg("linspace")")
+            return(f"Error while initializing Linspace array: {e} \n{help_msg('linspace')}")
         
     # Random
     def random(self, row, col, dt, low, high):
@@ -91,7 +91,7 @@ class Init:
                 raise ValueError("Use 'decimal' or 'float' to get values in decimal (float)")
             
         except Exception as e:
-            return(f"Error while initializing Random array: {e} \nhelp_msg("random")")
+            return(f"Error while initializing Random array: {e} \n{help_msg('random')}")
         
     # Range
     def arr_range(self, start, stop=None, step=1, dt=None):
@@ -108,7 +108,7 @@ class Init:
             else:
                 return np.arange(start, stop, step)
         except Exception as e:
-            return(f"Error while initializing Range array: {e} \nhelp_msg("arr_range")")
+            return(f"Error while initializing Range array: {e} \n{help_msg('arr_range')}")
         
     # Zeros
     def zeros(self, row, col=None, dt=None):
@@ -123,4 +123,4 @@ class Init:
             shape = (row, col) if col is not None else (row,)
             return np.zeros(shape, dtype=dtype)
         except Exception as e:
-            return(f"Error while initializing Zeroes: {e} \nhelp_msg("zeros")")
+            return(f"Error while initializing Zeroes: {e} \n{help_msg('zeros')}")

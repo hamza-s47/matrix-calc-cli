@@ -1,5 +1,6 @@
-import os
+# import os
 import numpy as np
+from utils.tools import help_msg
 
 class FileSystem:
     # Load .npy file
@@ -10,7 +11,7 @@ class FileSystem:
         except FileNotFoundError:
             return f"Error: File '{file}' not found."
         except Exception as e:
-            return f"Error while loading '{file}': {e}"
+            return f"Error while loading '{file}': {e} \n{help_msg('loadNpy')}"
     
     # Save .npy file
     def save_npy(self, file, arr):
@@ -19,7 +20,7 @@ class FileSystem:
             np.save(f"{file}", arr)
             return f"File saved successfully as '{file}'"
         except Exception as e:
-            return f"Error while saving file: {e}"
+            return f"Error while saving file: {e} \n{help_msg('saveNpy')}"
 
     # Load .txt file
     def load_txt(self, file, delimiter=None):
@@ -28,7 +29,7 @@ class FileSystem:
         except FileNotFoundError:
             return f"Error: File '{file}' not found."
         except Exception as e:
-            return f"Error while loading text file '{file}': {e}"
+            return f"Error while loading text file '{file}': {e} \n{help_msg('loadTxt')}"
 
     # Save .txt file
     def save_txt(self, file, arr, delimiter=" "):
@@ -39,5 +40,5 @@ class FileSystem:
             np.savetxt(f"{file}", arr, delimiter=delimiter, fmt="%s")
             return f"File saved successfully as '{file}'"
         except Exception as e:
-            return f"Error while saving text file: {e}"
+            return f"Error while saving text file: {e} \n{help_msg('saveTxt')}"
 

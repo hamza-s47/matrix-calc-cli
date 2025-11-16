@@ -1,4 +1,5 @@
 import numpy as np
+from utils.tools import help_msg
 
 class Manipulate:
     def __init__(self, arr):
@@ -8,13 +9,13 @@ class Manipulate:
         try:
             return self.arr.flatten()
         except Exception as e:
-            return f"Error while Flattening: {e}"
+            return f"Error while Flattening: {e} \n{help_msg('flatten')}"
         
     def ravel(self):
         try:
             return self.arr.ravel()
         except Exception as e:
-            return f"Error while Raveling: {e}"
+            return f"Error while Raveling: {e} \n{help_msg('ravel')}"
         
     def sorting(self, ax):
         try:
@@ -25,10 +26,10 @@ class Manipulate:
             else:
                 raise ValueError("Invalid axis value, use '0' for Column-wise")
         except Exception as e:
-            return f"Error while Sorting: {e}"
+            return f"Error while Sorting: {e} \n{help_msg('sort')}"
         
     def transpose(self):
         try:
             return self.arr.T
         except Exception as e:
-            return f"Error while Transposing: {e}"
+            return f"Error while Transposing: {e} \n{help_msg('transpose')}"

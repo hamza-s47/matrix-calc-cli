@@ -1,4 +1,5 @@
 import numpy as np
+from utils.tools import help_msg
 
 class MatrixArithmetic:
     def __init__(self, arr1, arr2=None):
@@ -13,21 +14,21 @@ class MatrixArithmetic:
         try:
             return (self.arr1+self.arr2)
         except Exception as e:
-            return (f"Error in Addition: {e} \nhelp_msg("add")")
+            return (f"Error in Addition: {e} \n{help_msg('add')}")
 
     # Subtraction
     def subtraction(self):
         try:
             return (self.arr1-self.arr2)
         except Exception as e:
-            return (f"Error in Subtraction: {e} \nhelp_msg("subtract")")
+            return (f"Error in Subtraction: {e} \n{help_msg('subtract')}")
 
     # Element-wise Multiplication
     def multiplication(self):
         try:
             return (self.arr1*self.arr2)
         except Exception as e:
-            return (f"Error in Element-wise Multiplication: {e} \nhelp_msg("elementMul")")
+            return (f"Error in Element-wise Multiplication: {e} \n{help_msg('elementMul')}")
         
     # Division
     def division(self):
@@ -35,7 +36,7 @@ class MatrixArithmetic:
             inv_b = np.linalg.inv(self.arr2)
             return np.dot(self.arr1,inv_b)
         except Exception as e:
-            return (f"Error in Division: {e} \nhelp_msg("divide")")
+            return (f"Error in Division: {e} \n{help_msg('divide')}")
     
     # Dot Product
     def dot_product(self):
@@ -45,21 +46,21 @@ class MatrixArithmetic:
             else:
                 raise ValueError(f"Shape mismatch: Array 1 shape: {self.arr1.shape}, Array 2 shape: {self.arr2.shape}")
         except Exception as e:
-            return (f"Error in Dot Product: {e} \nhelp_msg("dot")")
+            return (f"Error in Dot Product: {e} \n{help_msg('dot')}")
         
     # Linear System
     def lin_sys(self):
         try:
             return np.linalg.solve(self.arr1, self.arr2)
         except Exception as e:
-            return (f"Error in Solving Linear System: {e} \nhelp_msg("linear")")
+            return (f"Error in Solving Linear System: {e} \n{help_msg('linear')}")
 
     # Scalar Multiplication
     def s_multiplication(self, n):
         try:
             return (self.arr1*n)
         except Exception as e:
-            return (f"Error in Scalar Multiplication: {e} \nhelp_msg("scalarMul")")
+            return (f"Error in Scalar Multiplication: {e} \n{help_msg('scalarMul')}")
 
     # Square Root
     def sqrt(self):
@@ -68,21 +69,21 @@ class MatrixArithmetic:
                 raise ValueError("Square root of negative numbers is not allowed.")
             return (np.sqrt(self.arr1))
         except Exception as e:
-            return (f"Error in Square Root: {e} \nhelp_msg("sqrt")")
+            return (f"Error in Square Root: {e} \n{help_msg('sqrt')}")
         
     # Sin
     def sin(self):
         try:
             return (np.sin(self.arr1))
         except Exception as e:
-            return (f"Error in Sin: {e} \nhelp_msg("sin")")
+            return (f"Error in Sin: {e} \n{help_msg('sin')}")
         
     # Cos
     def cos(self):
         try:
             return (np.cos(self.arr1))
         except Exception as e:
-            return (f"Error in Cos: {e} \nhelp_msg("cos")")
+            return (f"Error in Cos: {e} \n{help_msg('cos')}")
         
     # Log
     def log(self):
@@ -91,7 +92,7 @@ class MatrixArithmetic:
                 raise ValueError("Logarithm undefined for Zero or Negative numbers.")
             return (np.log(self.arr1))
         except Exception as e:
-            return (f"Error in Log: {e} \nhelp_msg("log")")
+            return (f"Error in Log: {e} \n{help_msg('log')}")
         
     # Exponential
     def exp(self):
@@ -101,4 +102,4 @@ class MatrixArithmetic:
                 raise OverflowError("Overflow encountered in exponential.")
             return (result)
         except Exception as e:
-            return (f"Error in Exp: {e} \nhelp_msg("exp")")
+            return (f"Error in Exp: {e} \n{help_msg('exp')}")
