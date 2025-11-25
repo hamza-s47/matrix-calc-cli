@@ -1,4 +1,4 @@
-<h1 align=center> $\color{red}{\text{DOCUMENTATION}}$ </h1>
+# DOCUMENTATION
 
 ### <p align="left">Matrix CLI is a lightweight command-line matrix calculator built on top of NumPy, designed for quick matrix operations directly from your terminal. It supports matrix arithmetic, transformations, and utilities without needing to open a Python interpreter or write scripts.</p>
 
@@ -20,8 +20,8 @@ pip install -r requirements.txt
 
 ## **USAGE:**
 ### **General format:**
-main.py $\color{lime}{\text{command}}$ $\color{yellow}{\text{[options]}}$
+main.py command [options]
 
 ### **Show help:**
-main.py $\color{yellow}{\text{--help}}$ <br/>
-main.py $\color{lime}{\text{command}}$ $\color{yellow}{\text{--help}}$
+main.py --help <br/>
+main.py command --help
