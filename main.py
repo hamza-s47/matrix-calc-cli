@@ -6,8 +6,6 @@ from utils.help import help_commands, help_keys
 
 args=sys.argv[1:]
 
-# print(method.Arithmetic(cli(args)[0], cli(args)[1], cli(args)[2]))
-
 if cli(args)[0] in ["--help", "-h"] and len(cli(args))==1:
     for x in help_keys:
         print(help_commands[x])
